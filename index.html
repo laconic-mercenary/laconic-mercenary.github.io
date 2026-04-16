@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d1117;
+      --surface:   #161b22;
+      --border:    #30363d;
+      --text:      #c9d1d9;
+      --muted:     #8b949e;
+      --accent:    #58a6ff;
+      --tag-bg:    #1f2937;
+      --tag-text:  #93c5fd;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #e6edf3;
+      margin-bottom: 0.75rem;
+    }
+
+    header p.bio {
+      color: var(--text);
+      max-width: 620px;
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    .meta a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .meta a:hover { text-decoration: underline; }
+
+    .lang-badges {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .lang-badge {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 0.8rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    section h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #e6edf3;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── Work bullets ── */
+    ul.work {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    ul.work li {
+      padding-left: 1.25rem;
+      position: relative;
+      color: var(--text);
+    }
+
+    ul.work li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.75rem;
+      top: 0.2rem;
+    }
+
+    ul.work li code {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 0.8rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    /* ── Stack tags ── */
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.65rem;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    /* ── Defense grid ── */
+    .defense-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 2rem;
+    }
+
+    @media (max-width: 560px) {
+      .defense-grid { grid-template-columns: 1fr; }
+    }
+
+    .defense-col h3 {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h2>About me</h2>
+      <p class="bio">
+        ~15 years designing and building distributed, geospatial software systems —
+        with a focus on anti-fraud, defense, and e-commerce in multi-national teams.
+        Experienced across the full delivery lifecycle: architecture, development, SRE, DevOps, QA, and engineering management.
+        Currently in Tokyo.
+      </p>
+      <div class="meta">
+        <span>Tokyo, Japan</span>
+        <a href="mailto:mail@mstebbing.com">mail@mstebbing.com</a>
+        <a href="https://www.openintel.to" target="_blank" rel="noopener">openintel.to</a>
+        <a href="https://github.com/laconic-mercenary" target="_blank" rel="noopener">github.com/laconic-mercenary</a>
+      </div>
+      <div class="lang-badges">
+        <span class="lang-badge">English — Native</span>
+        <span class="lang-badge">Japanese — B1</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Default Stack</h2>
+      <div class="stack">
+        <span class="tag">Golang</span>
+        <span class="tag">Python</span>
+        <span class="tag">React</span>
+        <span class="tag">OpenFaaS</span>
+        <span class="tag">Cloud Functions</span>
+        <span class="tag">Postgres</span>
+        <span class="tag">IndexedDB</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Philosophy</h2>
+      <ul class="work">
+        <li>Give hungry, motivated people what they need - stay out of their way.</li>
+        <li>Problem? Ask 'why' 5 times - clarify assumptions.</li>
+        <li><b>SPEED</b> — delivery and processing.</li>
+        <li>Question non-trivial solutions - use APIs as intended.</li>
+        <li>Infra: make it cheap but available.</li>
+        <li>Apply <a href="https://12factor.net" target="_blank" rel="noopener">12 Factor Method</a>.</li>
+        <li>Non-dogmatic DDD — and have frequent coffee with domain experts.</li>
+        <li>Prefer Red-Green-Refactor at the system-integration level — it produces leaner code than unit-test-driven TDD.</li>
+        <li>LLM coding? Ask - given a production problem, can I explain the code to the system owner?</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Stuff I did</h2>
+      <ul class="work">
+        <li>Architected multi-tenant anti-fraud platform — rule engine, LLM-assisted decision UI tools, traditional machine learning for risk scoring, and case management, deployed to public cloud and on-premise envs.</li>
+        <li>Made polyglot microservices for e-commerce fraud detection — 200–400 tx/sec and 500–1,200 logins/sec — and built geospatial apps for investigators on flagged transactions, deployed on multi-region active-standby infra, with canary release CD pipelines.</li>
+        <li>Made weather data processing systems for defense operations — ingesting terabytes/day of satellite imagery and model run products — exposed via <a href="https://www.ogc.org/" target="_blank" rel="noopener">OGC</a>-compliant service APIs.</li>
+        <li>Led architecture for Business Continuity Planning across multiple teams — backed by hands-on administration of several Kubernetes and database clusters, and various corporate private and public cloud subscriptions.</li>
+        <li>Selected for an Architect Expert Group to design and implement SSDLC and release processes for a major Japanese telecom provider.</li>
+        <li>Countless projects involving GNSS and traditional land surveying, map making and geodatabase management with ESRI/ArcGIS, and civil drafting with Autodesk CAD.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Successfully Defended Against</h2>
+      <div class="defense-grid">
+        <div class="defense-col">
+          <h3>Fraud</h3>
+          <ul class="work">
+            <li>Account Takeover</li>
+            <li>Credit Card Transaction Fraud &amp; Chargebacks</li>
+            <li>Ecosystem Abuse — Points, Campaigns, and Cryptocurrency</li>
+            <li>KYC Abuse — Deepfake Audio and Video, Fake IDs, Forged Documents</li>
+          </ul>
+        </div>
+        <div class="defense-col">
+          <h3>Security &amp; Incident Response</h3>
+          <ul class="work">
+            <li>Zero-Day Exploitation — Log4Shell (JNDI), WannaCry, Heartbleed</li>
+            <li>Denial of Service Attacks</li>
+            <li>Massive Registration Attacks</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Language Experience</h2>
+      <div class="stack">
+        <span class="tag">Python</span>
+        <span class="tag">Java</span>
+        <span class="tag">C++</span>
+        <span class="tag">C</span>
+        <span class="tag">C#</span>
+        <span class="tag">VB.NET</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">PHP</span>
+        <span class="tag">Clojure</span>
+        <span class="tag">Ada</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Ask Me About War Stories In Production</h2>
+      <div class="stack">
+        <span class="tag">Kubernetes</span>
+        <span class="tag">Cassandra</span>
+        <span class="tag">memcached</span>
+        <span class="tag">MySQL (InnoDB)</span>
+        <span class="tag">ElasticSearch</span>
+        <span class="tag">DataDog</span>
+        <span class="tag">Splunk</span>
+        <span class="tag">Redis</span>
+        <span class="tag">etcd</span>
+        <span class="tag">Glassfish</span>
+        <span class="tag">Tomcat</span>
+        <span class="tag">Kafka</span>
+        <span class="tag">Oracle 11g</span>
+        <span class="tag">JavaEE (formerly J2EE)</span>
+        <span class="tag">Drupal</span>
+        <span class="tag">Django</span>
+        <span class="tag">Visual C++ 6 + MFC</span>
+        <span class="tag">IBM WebLogic</span>
+      </div>
+    </section>
+
+    <footer>
+      <span>www.mstebbing.com</span>
+    </footer>
+
+  </div>
+</body>
+</html>
